@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'models/student.dart';
@@ -64,6 +66,7 @@ class DatabaseHelper {
   }
 
   Future<List<Student>> getAllStudents() async {
+    await Future.delayed(const Duration(seconds: 5));
     final db = await instance.database;
     final result = await db.query(tableStudents);
     return result.map((map) => Student.fromMap(map)).toList();
