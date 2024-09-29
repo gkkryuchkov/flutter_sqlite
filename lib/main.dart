@@ -171,7 +171,6 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   itemBuilder: (context, index) {
                     Student student = students[index];
                     return Card(
-                      key: ValueKey(student.id),
                       child: ListTile(
                         title: Text(student.fullName),
                         subtitle: Text(
